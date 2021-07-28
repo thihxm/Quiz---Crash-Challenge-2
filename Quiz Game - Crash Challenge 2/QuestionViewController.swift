@@ -19,6 +19,7 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         
         questionImageView.layer.cornerRadius = self.cornerRadius
+        questionImageView.layer.masksToBounds = true
     }
 
 }
@@ -37,6 +38,7 @@ extension QuestionViewController: UICollectionViewDataSource {
             cell = answerCell
         }
         cell.layer.cornerRadius = self.cornerRadius
+        cell.layer.masksToBounds = true
         cell.backgroundColor = UIColor.red
 
         return cell
