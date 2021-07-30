@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="width" secondItem="3OE-0c-geC" secondAttribute="height" multiplier="16:9" id="H8P-iB-Ks2"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pergunta super revolucionária para pessoas muito inteligentes responderem com facilidade!" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzt-Kc-z5S" userLabel="Question">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pergunta super revolucionária para pessoas muito inteligentes responderem com facilidade!" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Uzt-Kc-z5S" userLabel="Question">
                                 <rect key="frame" x="19.666666666666657" y="297.33333333333331" width="351" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

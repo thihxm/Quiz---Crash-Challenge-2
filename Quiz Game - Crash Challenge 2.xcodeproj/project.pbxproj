@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF5FDB3126B31D3A0086B409 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FDB3026B31D3A0086B409 /* QuizQuestion.swift */; };
+		AF7E749B26B47B3200176A96 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E749A26B47B3200176A96 /* GameManager.swift */; };
 		AFAB050526B1E1DF0057F635 /* AnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB050426B1E1DF0057F635 /* AnswerCollectionViewCell.swift */; };
 		AFEF081B26B0826B00339722 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF081A26B0826B00339722 /* AppDelegate.swift */; };
 		AFEF081D26B0826B00339722 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF081C26B0826B00339722 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		AF5FDB3026B31D3A0086B409 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
+		AF7E749A26B47B3200176A96 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		AFAB050426B1E1DF0057F635 /* AnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCollectionViewCell.swift; sourceTree = "<group>"; };
 		AFEF081726B0826B00339722 /* Quiz Game - Crash Challenge 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiz Game - Crash Challenge 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFEF081A26B0826B00339722 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				AF5FDB3026B31D3A0086B409 /* QuizQuestion.swift */,
+				AF7E749A26B47B3200176A96 /* GameManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFAB050526B1E1DF0057F635 /* AnswerCollectionViewCell.swift in Sources */,
+				AF7E749B26B47B3200176A96 /* GameManager.swift in Sources */,
 				AFEF081F26B0826B00339722 /* QuestionViewController.swift in Sources */,
 				AFEF081B26B0826B00339722 /* AppDelegate.swift in Sources */,
 				AFEF081D26B0826B00339722 /* SceneDelegate.swift in Sources */,
