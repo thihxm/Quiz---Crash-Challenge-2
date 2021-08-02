@@ -21,10 +21,10 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let gradient = CAGradientLayer()
-        gradient.frame = view.bounds
-        gradient.colors = [UIColor(named: "GradientLight")!.cgColor, UIColor(named: "GradientDark")!.cgColor]
-        gradient.locations = [0, 0.65]
+//        let gradient = CAGradientLayer()
+//        gradient.frame = view.bounds
+//        gradient.colors = [UIColor(named: "GradientLight")!.cgColor, UIColor(named: "GradientDark")!.cgColor]
+//        gradient.locations = [0, 0.65]
 
 //        let x: Double! = 45 / 360.0
 //        let a = pow(sinf(Float(2 * Double.pi * ((x + 0.75) / 2.0))), 2)
@@ -35,7 +35,7 @@ class QuestionViewController: UIViewController {
 //        gradient.endPoint = CGPoint(x: CGFloat(c), y: CGFloat(d))
 //        gradient.startPoint = CGPoint(x: CGFloat(a), y:CGFloat(b))
         
-        view.layer.insertSublayer(gradient, at: 0)
+//        view.layer.insertSublayer(gradient, at: 0)
         amountOfQuestion = GameManager.instace.questions.count
         
         amountOfQuestionsLabel.text = "\(1)/\(amountOfQuestion)"

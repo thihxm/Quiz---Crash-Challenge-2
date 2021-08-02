@@ -13,12 +13,12 @@ class FinishedGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let gradient = CAGradientLayer()
-        gradient.frame = view.bounds
-        gradient.colors = [UIColor(named: "GradientLight")!.cgColor, UIColor(named: "GradientDark")!.cgColor]
-        gradient.locations = [0, 0.65]
-        
-        view.layer.insertSublayer(gradient, at: 0)
+//        let gradient = CAGradientLayer()
+//        gradient.frame = view.bounds
+//        gradient.colors = [UIColor(named: "GradientLight")!.cgColor, UIColor(named: "GradientDark")!.cgColor]
+//        gradient.locations = [0, 0.65]
+//        
+//        view.layer.insertSublayer(gradient, at: 0)
         
         messageLabel.text = "Parabéns você completou o quiz! Você acertou \(GameManager.instace.correctAnswers.count) e errou \(GameManager.instace.wrongAnswers.count) perguntas!"
     }
