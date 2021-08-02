@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Road.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Daimler.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },

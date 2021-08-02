@@ -16,9 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Road" translatesAutoresizingMaskIntoConstraints="NO" id="TTF-XR-kb0">
-                                <rect key="frame" x="0.0" y="461" width="390" height="383"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ferrari" translatesAutoresizingMaskIntoConstraints="NO" id="3OE-0c-geC" userLabel="Question Image">
                                 <rect key="frame" x="19.666666666666657" y="68.000000000000014" width="351" height="197.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,13 +24,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pergunta super revolucionária para pessoas muito inteligentes responderem com facilidade!" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Uzt-Kc-z5S" userLabel="Question">
-                                <rect key="frame" x="19.666666666666657" y="297.33333333333331" width="351" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="19.666666666666657" y="297.33333333333331" width="351" height="79"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QLX-x0-QUE">
-                                <rect key="frame" x="19.666666666666657" y="390.33333333333326" width="351" height="351"/>
+                                <rect key="frame" x="19.666666666666657" y="408.33333333333326" width="351" height="351"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QLX-x0-QUE" secondAttribute="height" multiplier="1:1" id="wRw-tg-3nM"/>
                                 </constraints>
@@ -109,17 +106,13 @@
                         <constraints>
                             <constraint firstItem="QLX-x0-QUE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2nu-mG-gUk"/>
                             <constraint firstItem="Uzt-Kc-z5S" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="6MJ-sX-2t5"/>
-                            <constraint firstItem="TTF-XR-kb0" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Ads-GH-E6H"/>
                             <constraint firstItem="QLX-x0-QUE" firstAttribute="top" secondItem="Uzt-Kc-z5S" secondAttribute="bottom" constant="32" id="HS6-ln-qD0"/>
-                            <constraint firstItem="TTF-XR-kb0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L0z-7E-mr8"/>
-                            <constraint firstItem="TTF-XR-kb0" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="P02-OJ-LRP"/>
                             <constraint firstItem="3OE-0c-geC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="Ugq-25-yq1"/>
                             <constraint firstItem="3OE-0c-geC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="WqH-6d-Jna"/>
                             <constraint firstItem="QLX-x0-QUE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="hsG-Vb-50i"/>
                             <constraint firstItem="3OE-0c-geC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pkJ-eP-ceJ"/>
                             <constraint firstItem="Uzt-Kc-z5S" firstAttribute="top" secondItem="3OE-0c-geC" secondAttribute="bottom" constant="32" id="pzD-C6-5Hy"/>
                             <constraint firstItem="Uzt-Kc-z5S" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tLR-J8-0F8"/>
-                            <constraint firstAttribute="bottom" secondItem="TTF-XR-kb0" secondAttribute="bottom" id="wLM-9l-BWX"/>
                         </constraints>
                     </view>
                     <connections>
@@ -134,7 +127,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Ferrari" width="600" height="807"/>
-        <image name="Road" width="1396" height="1396"/>
+        <image name="Ferrari" width="810" height="495"/>
     </resources>
 </document>

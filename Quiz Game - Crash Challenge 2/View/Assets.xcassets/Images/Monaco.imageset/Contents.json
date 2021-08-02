@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "Monaco.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Bugatti.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

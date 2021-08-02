@@ -22,30 +22,34 @@ class AnswerCollectionViewCell: UICollectionViewCell {
 
     func configure(with answer: String) {
         answerLabel.text = answer
-        answerLabel.tintColor = UIColor(named: "RBR Blue")
+        answerLabel.tintColor = UIColor(named: "RBR Dark Blue")
+        answerLabel.alpha = 1
+        self.backgroundColor = .white
     }
 
     func setupView() {
-        let gradient = CAGradientLayer()
-        gradient.frame = contentView.bounds
-        gradient.colors = [UIColor(named: "RBR Light Yellow")!.cgColor, UIColor(named: "RBR Yellow")!.cgColor]
-        gradient.cornerRadius = 24
-        contentView.layer.insertSublayer(gradient, at: 0)
+//        let gradient = CAGradientLayer()
+//        gradient.frame = contentView.bounds
+//        gradient.colors = [UIColor(named: "RBR Light Yellow")!.cgColor, UIColor(named: "RBR Yellow")!.cgColor]
+//        gradient.cornerRadius = 8
+//        contentView.layer.insertSublayer(gradient, at: 0)
 
-        contentView.layer.borderWidth = 1.0
+        self.backgroundColor = .white
+        self.layer.borderWidth = 1.0
 
-        contentView.layer.borderColor = UIColor.clear.cgColor
-        contentView.layer.cornerRadius = 24
-        contentView.layer.masksToBounds = true
-        contentView.clipsToBounds = false
+        self.layer.borderColor = UIColor.clear.cgColor
+        self.layer.cornerRadius = 8
+        self.layer.masksToBounds = true
+        self.clipsToBounds = false
         clipsToBounds = false
 
-        contentView.layer.masksToBounds = false
-        contentView.layer.shadowColor = UIColor(named: "Dark Gray")!.cgColor
-        contentView.layer.shadowRadius = 10
-        contentView.layer.shadowOpacity = 0.7
-        contentView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        contentView.layer.shadowPath = UIBezierPath(roundedRect: contentView.bounds, cornerRadius: 24).cgPath
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor(named: "ButtonShadow")!.cgColor
+        self.layer.shadowRadius = 10
+        self.layer.shadowOpacity = 0.7
+        self.layer.shadowOffset = CGSize(width: 5, height: 5)
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: 8).cgPath
+//        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
     }
 
 }

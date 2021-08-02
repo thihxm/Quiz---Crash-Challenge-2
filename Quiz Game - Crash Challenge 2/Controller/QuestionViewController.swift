@@ -21,17 +21,28 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
-        gradient.colors = [UIColor(named: "Light Green")!.cgColor, UIColor(named: "Green")!.cgColor]
-        gradient.locations = [0, 0.45]
+        gradient.colors = [UIColor(named: "GradientLight")!.cgColor, UIColor(named: "GradientDark")!.cgColor]
+        gradient.locations = [0, 0.65]
+
+//        let x: Double! = 45 / 360.0
+//        let a = pow(sinf(Float(2 * Double.pi * ((x + 0.75) / 2.0))), 2)
+//        let b = pow(sinf(Float(2 * Double.pi * ((x + 0.0) / 2))), 2)
+//        let c = pow(sinf(Float(2 * Double.pi * ((x + 0.25) / 2))), 2)
+//        let d = pow(sinf(Float(2 * Double.pi * ((x + 0.5) / 2))), 2)
+//
+//        gradient.endPoint = CGPoint(x: CGFloat(c), y: CGFloat(d))
+//        gradient.startPoint = CGPoint(x: CGFloat(a), y:CGFloat(b))
+        
         view.layer.insertSublayer(gradient, at: 0)
         
         
         
-        if let questionImage = UIImage(named: question.imageName) {
-            let colorlessImage = questionImage.withRenderingMode(.alwaysTemplate)
-            questionImageView.image = colorlessImage
-            questionImageView.tintColor = .gray.withAlphaComponent(0.7)
-        }
+//        if let questionImage = UIImage(named: question.imageName) {
+//            let colorlessImage = questionImage.withRenderingMode(.alwaysTemplate)
+//            questionImageView.image = colorlessImage
+//            questionImageView.tintColor = .gray.withAlphaComponent(0.7)
+//        }
+        questionImageView.image = UIImage(named: question.imageName)
         questionImageView.layer.cornerRadius = self.cornerRadius
         questionImageView.layer.masksToBounds = true
         
@@ -44,11 +55,12 @@ class QuestionViewController: UIViewController {
         let currentQuestion = GameManager.instace.currentQuestion
         question = GameManager.instace.questions[currentQuestion]
         
-        if let questionImage = UIImage(named: question.imageName) {
-            let colorlessImage = questionImage.withRenderingMode(.alwaysTemplate)
-            questionImageView.image = colorlessImage
-            questionImageView.tintColor = .gray.withAlphaComponent(0.7)
-        }
+//        if let questionImage = UIImage(named: question.imageName) {
+//            let colorlessImage = questionImage.withRenderingMode(.alwaysTemplate)
+//            questionImageView.image = colorlessImage
+//            questionImageView.tintColor = .gray.withAlphaComponent(0.7)
+//        }
+        questionImageView.image = UIImage(named: question.imageName)
         questionImageView.layer.cornerRadius = self.cornerRadius
         questionImageView.layer.masksToBounds = true
 
@@ -82,13 +94,34 @@ extension QuestionViewController: UICollectionViewDataSource {
 extension QuestionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let clickedAnswer = question.answers[indexPath.row]
+        let cell = collectionView.cellForItem(at: indexPath) as! AnswerCollectionViewCell
+        
+        collectionView.visibleCells.forEach { collectionCell in
+            let cellAsAnswer = collectionCell as! AnswerCollectionViewCell
+            guard cellAsAnswer != cell else {
+                return
+            }
+            cellAsAnswer.answerLabel.alpha = 0
+            cellAsAnswer.backgroundColor = UIColor(named: "ButtonShadow")
+            cellAsAnswer.customAnimation(.flip)
+        }
+
+        GameManager.instace.currentQuestion += 1
+        if GameManager.instace.questions.count <= GameManager.instace.currentQuestion {
+            GameManager.instace.currentQuestion = 0
+        }
 
         if clickedAnswer.isCorrect {
-            GameManager.instace.currentQuestion += 1
-            if GameManager.instace.questions.count <= GameManager.instace.currentQuestion {
-                GameManager.instace.currentQuestion = 0
-            }
-            updateQuestion()
+            GameManager.instace.correctAnswers.append(question)
+            cell.customAnimation(.correctAnswer, completion: {
+                cell.backgroundColor = UIColor(named: "ButtonShadow")
+                self.updateQuestion()
+            })
+        } else {
+            GameManager.instace.wrongAnswers.append(question)
+            cell.customAnimation(.wrongAnswer, completion: {
+                self.updateQuestion()
+            })
         }
         print("Selected Answer is correct? \(clickedAnswer.isCorrect)")
     }
@@ -96,15 +129,28 @@ extension QuestionViewController: UICollectionViewDelegate {
 
 extension UIView {
     enum AnimationType {
-        case flip
+        case flip, wrongAnswer, correctAnswer
     }
 
-    func customAnimation(_ method: AnimationType, finished: @escaping () -> Void = {}) {
+    func customAnimation(_ method: AnimationType, completion: @escaping () -> Void = {}) {
         switch method {
         case .flip:
             UIView.transition(with: self, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
+        case .wrongAnswer:
+            UIView.animate(withDuration: 0.35, delay: 0, options: .curveEaseIn, animations: {
+                self.backgroundColor = UIColor(named: "RBR Red")
+            }, completion: {_ in
+                self.customAnimation(.flip)
+                completion()
+            })
+        case .correctAnswer:
+            UIView.animate(withDuration: 0.35, delay: 0, options: .curveEaseIn, animations: {
+                self.backgroundColor = UIColor(named: "Green")
+            }, completion: {_ in
+                self.customAnimation(.flip)
+                completion()
+            })
         }
-            
     }
 }
 
