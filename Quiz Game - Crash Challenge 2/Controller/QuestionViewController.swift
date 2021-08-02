@@ -11,9 +11,11 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answersCollectionView: UICollectionView!
     @IBOutlet weak var questionImageView: UIImageView!
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var amountOfQuestionsLabel: UILabel!
     
     private let reuseIdentifier = "AnswerCell"
     private let cornerRadius: CGFloat = 24
+    private var amountOfQuestion: Int = 1
     
     private var question = GameManager.instace.questions[0]
     
@@ -34,8 +36,9 @@ class QuestionViewController: UIViewController {
 //        gradient.startPoint = CGPoint(x: CGFloat(a), y:CGFloat(b))
         
         view.layer.insertSublayer(gradient, at: 0)
+        amountOfQuestion = GameManager.instace.questions.count
         
-        
+        amountOfQuestionsLabel.text = "\(1)/\(amountOfQuestion)"
         
 //        if let questionImage = UIImage(named: question.imageName) {
 //            let colorlessImage = questionImage.withRenderingMode(.alwaysTemplate)
@@ -109,6 +112,12 @@ extension QuestionViewController: UICollectionViewDelegate {
         GameManager.instace.currentQuestion += 1
         if GameManager.instace.questions.count <= GameManager.instace.currentQuestion {
             GameManager.instace.currentQuestion = 0
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let finishedGameVC = storyBoard.instantiateViewController(withIdentifier: "FinishedGameViewController") as! FinishedGameViewController
+            finishedGameVC.modalPresentationStyle = .fullScreen
+            present(finishedGameVC, animated: true)
+        } else {        
+            amountOfQuestionsLabel.text = "\(GameManager.instace.currentQuestion + 1)/\(amountOfQuestion)"
         }
 
         if clickedAnswer.isCorrect {

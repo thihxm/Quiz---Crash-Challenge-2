@@ -10,6 +10,7 @@
 		AF5FDB3126B31D3A0086B409 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FDB3026B31D3A0086B409 /* QuizQuestion.swift */; };
 		AF7E749B26B47B3200176A96 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E749A26B47B3200176A96 /* GameManager.swift */; };
 		AFAB050526B1E1DF0057F635 /* AnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB050426B1E1DF0057F635 /* AnswerCollectionViewCell.swift */; };
+		AFB255B526B83C910053C377 /* FinishedGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB255B426B83C910053C377 /* FinishedGameViewController.swift */; };
 		AFEF081B26B0826B00339722 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF081A26B0826B00339722 /* AppDelegate.swift */; };
 		AFEF081D26B0826B00339722 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF081C26B0826B00339722 /* SceneDelegate.swift */; };
 		AFEF081F26B0826B00339722 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF081E26B0826B00339722 /* QuestionViewController.swift */; };
@@ -22,6 +23,7 @@
 		AF5FDB3026B31D3A0086B409 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
 		AF7E749A26B47B3200176A96 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		AFAB050426B1E1DF0057F635 /* AnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCollectionViewCell.swift; sourceTree = "<group>"; };
+		AFB255B426B83C910053C377 /* FinishedGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedGameViewController.swift; sourceTree = "<group>"; };
 		AFEF081726B0826B00339722 /* Quiz Game - Crash Challenge 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiz Game - Crash Challenge 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFEF081A26B0826B00339722 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFEF081C26B0826B00339722 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		AF5FDB2F26B31A240086B409 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AFB255B426B83C910053C377 /* FinishedGameViewController.swift */,
 				AFEF081E26B0826B00339722 /* QuestionViewController.swift */,
 			);
 			path = Controller;
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFB255B526B83C910053C377 /* FinishedGameViewController.swift in Sources */,
 				AFAB050526B1E1DF0057F635 /* AnswerCollectionViewCell.swift in Sources */,
 				AF7E749B26B47B3200176A96 /* GameManager.swift in Sources */,
 				AFEF081F26B0826B00339722 /* QuestionViewController.swift in Sources */,
